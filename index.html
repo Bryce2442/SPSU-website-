@@ -11,14 +11,8 @@
 <body id="main_bg">
 
     <header id="header_bg">
-        <img src="websiteAssets/ksuLogo.png"
-             alt="Kennesaw State University Logo"
-             class="ksu-logo">
-
         <section id="mainHeader">
-            <img src="websiteAssets/GameLogo.png"
-                 alt="Southern Bathtub Racing Game Logo"
-                 class="game-logo">
+            <img src="websiteAssets/GameLogo.png" width="400px" height="auto" alt="Southern Bathtub Racing Game Logo">
             <h1>Southern Bathtub Racing Game</h1>
         </section>
 
@@ -26,50 +20,44 @@
             <h4>Kennesaw State University - Fall 2026 Senior Capstone Project</h4>
         </section>
 
-        <nav id="tabs" aria-label="Website sections">
-            <a class="nav-button l_trim" href="#Project_Overview">Project Overview</a>
-            <a class="nav-button" href="#SPSU_History">SPSU Race History</a>
-            <a class="nav-button r_trim" href="#Dev_Team">Dev Team</a>
+        <nav id="tabs">
+            <button id="button" onclick="location.href='#Project_Overview'" class="l_trim">Project Overview</button>
+            <button id="button" onclick="location.href='#SPSU_History'">SPSU Race History</button>
+            <button id="button" onclick="location.href='#Dev_Team'" class="r_trim">Dev Team</button>
         </nav>
     </header>
 
     <main id="body_container">
 
         <section id="Project_Overview" class="body_textbubble">
-            <h2 class="textbubble_header">Project Overview</h2>
-            <p class="textbubble_text">
+            <h4 id="textbubble_header">Project Overview</h4>
+            <p id="textbubble_text">
                 The Southern Bathtub Racing Game is a senior capstone project developed by students at Kennesaw State University during the Fall 2026 semester. The goal of this project is to bring back the history of Southern Polytechnic State University's (SPSU) famous bathtub races through a 3D racing video game. The game allows players to race against AI opponents or other players while experiencing a tradition that was once a major part of SPSU's campus life.
-            </p>
-            <p class="textbubble_text">
+
                 The current development team is building on the work of previous students by improving the game's overall design, performance, and gameplay. Some of the major updates include redesigned user interfaces, improved AI racing behavior, kart customization options, a third-person camera, and a new boost system. The team has also worked on improving the racetrack, adding new visual assets, and fixing existing bugs.
-            </p>
-            <p class="textbubble_text">
+
                 The main goal is to create an enjoyable racing experience while preserving an important part of SPSU's history for alumni, current KSU students, and future players.
             </p>
         </section>
 
         <section id="SPSU_History" class="body_textbubble">
-            <h2 class="textbubble_header">SPSU Bathtub Race History</h2>
-            <p class="textbubble_text">
+            <h4 id="textbubble_header">SPSU Bathtub Race History</h4>
+            <p id="textbubble_text">
                 The Southern Polytechnic State University bathtub races were a popular campus tradition that began in the 1960s when the school was known as Southern Technical Institute. Students originally used old bathtubs and eventually began modifying them with wheels, engines, and custom-built frames to compete against one another. Over time, the races became a major event that brought the entire campus together.
-            </p>
-            <p class="textbubble_text">
+
                 The original motorized races eventually ended in 1991, although the tradition was briefly brought back in a non-motorized format years later.
-            </p>
-            <p class="textbubble_text">
+
                 Today, the Southern Bathtub Racing Game is being developed to help preserve this unique tradition. By recreating the experience in a video game, the project allows former SPSU students to revisit their college memories while introducing current KSU students to an important part of the university's history.
             </p>
         </section>
 
         <section id="Dev_Team" class="body_textbubble">
-            <h2 class="textbubble_header">Current Development Team</h2>
-            <p class="textbubble_text">
+            <h4 id="textbubble_header">Current Development Team</h4>
+            <p id="textbubble_text">
                 The current development team consists of five Kennesaw State University students working together during the Fall 2026 semester. The team members are Bryce Armand, Angel, Matthew, Sam, and Tony, with Bryce serving as the team leader.
-            </p>
-            <p class="textbubble_text">
+
                 Each member contributes to different parts of the project, including programming, user interface development, racetrack improvements, 3D asset creation, gameplay mechanics, and testing. The team has worked on improving existing features while also developing new additions such as kart customization, a boost mechanic, updated menus, a third-person view, and map changes.
-            </p>
-            <p class="textbubble_text">
+
                 The project is being completed with support and feedback from the project's sponsor, William McKenna.
             </p>
         </section>
@@ -85,5 +73,6 @@
             </a>
         </p>
     </footer>
+
 </body>
 </html>
