@@ -1,71 +1,345 @@
 
-/* Fix header layout on phones and tablets */
-@media (max-width: 958px) {
+:root {
+    --spsu-green: #008852;
+    --spsu-bright-green: #6DB33F;
+    --header-gray: #939BA1;
+    --mobile-panel: #b2bba9;
+    --nav-green: #619080;
+    --nav-border: #00573D;
+}
 
-    #header_bg {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
+* {
+    box-sizing: border-box;
+}
+
+html {
+    min-height: 100%;
+    scroll-behavior: smooth;
+    background-color: var(--spsu-green);
+}
+
+body,
+#main_bg {
+    min-height: 100vh;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: var(--spsu-green);
+    color: #000;
+    overflow-x: hidden;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Header and logos */
+
+#header_bg {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background-color: var(--spsu-green);
+}
+
+.ksu-logo {
+    position: absolute;
+    top: 22px;
+    left: 22px;
+    width: 140px;
+    max-width: 20%;
+    height: auto;
+    object-fit: contain;
+    z-index: 2;
+}
+
+#mainHeader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    width: min(780px, calc(100% - 350px));
+    min-height: 320px;
+    padding: 20px 12px;
+    background-color: var(--header-gray);
+    color: #000;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#mainHeader .game-logo,
+#mainHeader img {
+    display: block;
+    width: min(400px, 55%);
+    max-width: 100%;
+    height: auto;
+    flex-shrink: 1;
+    object-fit: contain;
+}
+
+#mainHeader h1 {
+    flex: 1 1 0;
+    min-width: 0;
+    margin: 0;
+    font-size: clamp(24px, 2.3vw, 40px);
+    line-height: 1.15;
+    overflow-wrap: anywhere;
+}
+
+#headerDetails {
+    width: 100%;
+    padding: 16px 14px;
+    background-color: var(--header-gray);
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+}
+
+#headerDetails h4 {
+    margin: 0;
+    font-size: clamp(18px, 2vw, 25px);
+    line-height: 1.4;
+}
+
+/* Navigation buttons */
+
+#tabs {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    width: 100%;
+    padding: 6px 5% 0;
+    background-color: var(--header-gray);
+}
+
+#tabs .nav-button,
+#tabs #button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1 1 0;
+    min-width: 0;
+    padding: 15px 20px;
+    border: 1px solid var(--nav-border);
+    background-color: var(--nav-green);
+    color: white;
+    font: 20px 'Trebuchet MS', Arial, sans-serif;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#tabs .nav-button:hover,
+#tabs .nav-button:focus-visible,
+#tabs #button:hover,
+#tabs #button:focus-visible {
+    background-color: var(--spsu-bright-green);
+}
+
+.l_trim {
+    border-radius: 15px 0 0 15px;
+}
+
+.r_trim {
+    border-radius: 0 15px 15px 0;
+}
+
+/* Main website sections */
+
+#body_container {
+    display: flex;
+    flex: 1 0 auto;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 44px 0;
+    background-color: var(--spsu-green);
+}
+
+.body_textbubble,
+#body_textbubble {
+    width: 90%;
+    margin: 0 0 35px;
+    padding: 22px 25px;
+    border-radius: 20px;
+    background-color: var(--header-gray);
+}
+
+.body_textbubble:last-child,
+#body_textbubble:last-child {
+    margin-bottom: 0;
+}
+
+.textbubble_header,
+#textbubble_header {
+    margin: 10px 0 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT',
+        Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 30px;
+    text-align: center;
+    text-decoration: underline;
+    line-height: 1.2;
+}
+
+.textbubble_text,
+#textbubble_text {
+    margin: 0 0 16px;
+    font-family: 'Gill Sans', 'Gill Sans MT',
+        Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 24px;
+    line-height: 1.45;
+    text-align: center;
+    overflow-wrap: break-word;
+}
+
+.textbubble_text:last-child,
+#textbubble_text:last-child {
+    margin-bottom: 0;
+}
+
+/* Footer */
+
+footer {
+    width: 100%;
+    padding: 18px 16px;
+    background-color: var(--header-gray);
+    color: #000;
+    font-family: 'Gill Sans', 'Gill Sans MT',
+        Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Mobile and tablet layout */
+
+@media (max-width: 958px) {
 
     .ksu-logo {
         position: static;
         display: block;
-        width: 90px;
-        max-width: 100%;
-        height: auto;
-        margin: 15px auto;
+        width: 100px;
+        max-width: 35%;
+        margin: 16px auto;
     }
 
     #mainHeader {
+        flex-direction: column;
         width: 100%;
         min-height: 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
+        gap: 14px;
+        padding: 20px 16px;
         text-align: center;
-        gap: 15px;
-        padding: 20px 15px;
     }
 
-    .game-logo {
-        display: block;
-        width: 280px;
+    #mainHeader .game-logo,
+    #mainHeader img {
+        width: min(290px, 85%);
         max-width: 85%;
         height: auto;
-        flex-shrink: 1;
+        flex: none;
     }
 
     #mainHeader h1 {
-        font-size: 28px;
-        line-height: 1.2;
+        flex: none;
         width: 100%;
-        margin: 0;
-        text-align: center;
+        font-size: 28px;
+        line-height: 1.25;
     }
 
     #headerDetails {
-        width: 100%;
-        padding: 15px;
-        text-align: center;
+        padding: 12px 16px;
     }
 
     #headerDetails h4 {
         font-size: 18px;
-        line-height: 1.4;
-        margin: 0;
     }
 
     #tabs {
-        width: 100%;
         flex-direction: column;
+        align-items: center;
         padding: 10px 0;
     }
 
-    .nav-button {
+    #tabs .nav-button,
+    #tabs #button {
+        flex: none;
         width: 90%;
         margin: 5px auto;
+        min-height: 52px;
+    }
+
+    .l_trim {
+        border-radius: 15px 15px 0 0;
+    }
+
+    .r_trim {
+        border-radius: 0 0 15px 15px;
+    }
+
+    .body_textbubble,
+    #body_textbubble {
+        width: 90%;
+        background-color: var(--mobile-panel);
+    }
+
+    .textbubble_text,
+    #textbubble_text {
+        font-size: 20px;
+    }
+}
+
+/* Smaller mobile devices */
+
+@media (max-width: 540px) {
+
+    #mainHeader .game-logo,
+    #mainHeader img {
+        width: min(260px, 85%);
+    }
+
+    #mainHeader h1 {
+        font-size: 24px;
+    }
+
+    #headerDetails h4 {
+        font-size: 16px;
+    }
+
+    #tabs .nav-button,
+    #tabs #button {
+        font-size: 18px;
+    }
+
+    #body_container {
+        padding: 25px 0;
+    }
+
+    .body_textbubble,
+    #body_textbubble {
+        width: 92%;
+        padding: 18px 12px;
+        margin-bottom: 25px;
+    }
+
+    .textbubble_header,
+    #textbubble_header {
+        font-size: 25px;
+    }
+
+    .textbubble_text,
+    #textbubble_text {
+        font-size: 18px;
+        line-height: 1.5;
+    }
+
+    footer {
+        font-size: 16px;
     }
 }
